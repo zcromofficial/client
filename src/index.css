@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   🎨 DESIGN SYSTEM — ZCROM Theme
+   Define all brand colors, gradients, shadows, and radii here.
+   All color values use HSL for easier theming.
+============================================================ */
+
+html, body {
+  overflow-x: hidden;
+}
+
+@layer base {
+  :root {
+    /* === Light Theme === */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 13% 13%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* === Custom Design Tokens === */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(271 76% 53%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 13% 98%) 100%);
+
+    --shadow-sm: 0 2px 8px -2px hsl(220 13% 13% / 0.08);
+    --shadow-md: 0 8px 24px -4px hsl(220 13% 13% / 0.12);
+    --shadow-lg: 0 16px 48px -8px hsl(220 13% 13% / 0.16);
+    --shadow-glow: 0 0 32px hsl(211 100% 50% / 0.24);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* === Dark Mode === */
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/* ============================================================
+   🌐 BASE STYLES
+============================================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* ============================================================
+   ⚙️ UTILITIES
+============================================================ */
+@layer utilities {
+  /* === Gradient Backgrounds === */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* === Gradient Text === */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-primary {
+    background: linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(271 76% 53%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-text-secondary {
+    background: linear-gradient(135deg, hsl(271 76% 53%) 0%, hsl(211 100% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* === Shadows === */
+  .shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* === Transitions === */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* === Hover Effects === */
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition: var(--transition-smooth);
+  }
+
+  /* === Animations (optional for portfolio hero) === */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
+  }
+}
+
+
+/* === Extra Utilities for About Page === */
+@layer utilities {
+  /* Grid Background Pattern */
+  .bg-grid-pattern {
+    background-image: linear-gradient(
+        to right,
+        hsl(220 13% 91% / 0.2) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(220 13% 91% / 0.2) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Floating Animation for Decorative Elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+}
