@@ -42,7 +42,7 @@ const services: Service[] = [
     description: "Static to dynamic websites with modern frameworks",
     details:
       "We build responsive, fast, and SEO-optimized websites using cutting-edge technologies like React, Next.js, and Tailwind CSS. From landing pages to complex web applications.",
-    pricing: "Starting from ₹2,999",
+    pricing: "Starting from ₹6999",
     slug: "website-development",
   },
   {
@@ -87,7 +87,7 @@ const services: Service[] = [
     description: "CRM, ERP, and custom automation solutions",
     details:
       "Streamline your business with custom CRM/ERP systems, workflow automation, and integration solutions.",
-    pricing: "Starting from ₹29,999",
+    pricing: "Starting from ₹21,999",
     slug: "ai-automation",
   },
   {
