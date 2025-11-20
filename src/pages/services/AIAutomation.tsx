@@ -113,68 +113,90 @@ const AIAutomation = () => {
     <div className="min-h-screen pt-24">
 
       {/* AI Agent Image Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <Sparkles className="w-4 h-4" />
-                  AI-Powered Intelligence
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Smart Agents That Work <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">For You</span>
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Our AI agents are designed to understand context, learn from interactions, and make intelligent decisions. They seamlessly integrate with your existing systems to automate complex workflows.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">Natural language understanding for human-like interactions</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">Multi-channel support (web, mobile, WhatsApp, Slack)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">Continuous learning and improvement from data</span>
-                  </li>
-                </ul>
-                 <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button 
-                    onClick={() => navigate('/contact')}
-                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
-                  >
-                  Book Free Session
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-                </Button>
-                <Button
-                  onClick={() => window.open(whatsappUrl, "_blank")}
-                  variant="outline"
-                  className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat on WhatsApp
-                </Button>
-              </div>
-              </div>
-              
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-20 blur-3xl rounded-full"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop" 
-                  alt="AI Agent Interface" 
-                  className="relative rounded-2xl shadow-2xl w-full object-cover"
-                />
-                
-              </div>
-              
-            </div>
+        <section className="py-12 lg:py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Text Content Side */}
+        <div className="text-center lg:text-left">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Sparkles className="w-4 h-4" />
+            AI-Powered Intelligence
+          </div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Smart Agents That Work{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              For You
+            </span>
+          </h2>
+
+          <p className="text-base md:text-lg text-gray-600 mb-8">
+            Our AI agents are designed to understand context, learn from
+            interactions, and make intelligent decisions. They seamlessly
+            integrate with your existing systems to automate complex workflows.
+          </p>
+
+          {/* List - Centered block, Left text */}
+          <ul className="space-y-4 mb-8 text-left max-w-md mx-auto lg:mx-0">
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                Natural language understanding for human-like interactions
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                Multi-channel support (web, mobile, WhatsApp, Slack)
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-blue-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                Continuous learning and improvement from data
+              </span>
+            </li>
+          </ul>
+
+          {/* Buttons - Vertical on Mobile */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <Button
+              onClick={() => navigate("/contact")}
+              className="w-full sm:w-auto gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group py-3"
+            >
+              Book Free Session
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+            </Button>
+            <Button
+              onClick={() => window.open(whatsappUrl, "_blank")}
+              variant="outline"
+              className="w-full sm:w-auto font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group py-3"
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Chat on WhatsApp
+            </Button>
           </div>
         </div>
-      </section>
+
+        {/* Image Side */}
+        <div className="relative mt-8 lg:mt-0 px-4 lg:px-0">
+          {/* Blur Effect - Contained to prevent scrollbars */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-20 blur-3xl rounded-full transform scale-90"></div>
+          <img
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
+            alt="AI Agent Interface"
+            className="relative rounded-2xl shadow-2xl w-full object-cover"
+          />
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Solutions Grid */}
       <section className="py-20 bg-gray-50">
@@ -467,24 +489,27 @@ const AIAutomation = () => {
             <p className="text-lg text-white/90 mb-8">
               Let's discuss how AI and automation can transform your operations and boost productivity.
             </p>
-            <div className="flex gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-white/90"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                Chat on WhatsApp
-                <ArrowRight className="ml-2" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white bg-blue-600 text-white hover:bg-white/10"
-                onClick={() => window.location.href = "/contact"}
-              >
-                Schedule Demo
-              </Button>
-            </div>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+         {/* Button 1: White Background */}
+     <Button 
+     size="lg" 
+      onClick={() => window.open(whatsappUrl, "_blank")}
+     className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100 font-semibold"
+    >
+     Chat on WhatsApp
+     <ArrowRight className="ml-2 w-4 h-4" />
+    </Button>
+
+     {/* Button 2: Transparent/Outline */}
+    <Button 
+    size="lg" 
+    variant="outline" 
+    onClick={() => window.location.href = "/contact"}
+    className="w-full sm:w-auto border-white text-white bg-transparent hover:bg-white hover:text-blue-600 font-semibold"
+   >
+    Schedule Demo
+   </Button>
+    </div>
           </div>
         </div>
       </section>

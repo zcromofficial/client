@@ -118,80 +118,85 @@ const MobileApplication = () => {
     <div className="min-h-screen pt-24">
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 relative overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Text Content */}
-            <div className="animate-fade-in-up text-gray-900">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
-                <Sparkles size={16} />
-                <span>MOBILE APPLICATION DEVELOPMENT</span>
-              </div>
+      <section className="py-12 lg:py-28 relative overflow-hidden bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Content */}
+      <div className="animate-fade-in-up text-gray-900 text-center lg:text-left">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-semibold mb-6">
+          <Sparkles size={16} />
+          <span>MOBILE APPLICATION DEVELOPMENT</span>
+        </div>
 
-              <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight">
-                Create <span className="gradient-text">Stunning Mobile Experiences</span> That Users Love
-              </h1>
+        <h1 className="text-4xl lg:text-6xl font-black mb-6 leading-tight">
+          Create <span className="gradient-text bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Stunning Mobile Experiences</span> That Users Love
+        </h1>
 
-              <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
-                Transform your ideas into powerful mobile applications. We build native iOS, Android, and cross-platform apps that deliver exceptional performance and user engagement.
-              </p>
+        <p className="text-base md:text-xl text-gray-700 mb-8 leading-relaxed">
+          Transform your ideas into powerful mobile applications. We build native iOS, Android, and cross-platform apps that deliver exceptional performance and user engagement.
+        </p>
 
-               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-            <Button className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group">
-                Book Free Session
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-              </Button>
-              <Button
-                onClick={() => window.open(whatsappUrl, "_blank")}
-                variant="outline"
-                className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Chat on WhatsApp
-              </Button>
+        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+          <Button className="w-full sm:w-auto gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group py-3">
+            Book Free Session
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+          </Button>
+          <Button
+            onClick={() => window.open(whatsappUrl, "_blank")}
+            variant="outline"
+            className="w-full sm:w-auto font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group py-3"
+          >
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Chat on WhatsApp
+          </Button>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-4 md:gap-8 mt-10 lg:mt-12 text-gray-900 justify-center lg:justify-start">
+          <div>
+            <div className="text-2xl md:text-3xl font-bold">100+</div>
+            <div className="text-gray-600 text-xs md:text-sm">Apps Delivered</div>
           </div>
+          <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold">95%</div>
+            <div className="text-gray-600 text-xs md:text-sm">Client Satisfaction</div>
+          </div>
+          <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold">5+</div>
+            <div className="text-gray-600 text-xs md:text-sm">Years Experience</div>
+          </div>
+        </div>
+      </div>
 
-              <div className="flex items-center gap-8 mt-12 text-gray-900">
-                <div>
-                  <div className="text-3xl font-bold">100+</div>
-                  <div className="text-gray-600 text-sm">Apps Delivered</div>
-                </div>
-                <div className="w-px h-12 bg-gray-200"></div>
-                <div>
-                  <div className="text-3xl font-bold">95%</div>
-                  <div className="text-gray-600 text-sm">Client Satisfaction</div>
-                </div>
-                <div className="w-px h-12 bg-gray-200"></div>
-                <div>
-                  <div className="text-3xl font-bold">5+</div>
-                  <div className="text-gray-600 text-sm">Years Experience</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Image Section */}
-            <div className="animate-fade-in hidden lg:block">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" 
-                  alt="Mobile App Development"
-                  className="rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-xl shadow-2xl animate-float">
-                  <div className="flex items-center gap-3">
-                    <Award className="text-purple-600" size={32} />
-                    <div>
-                      <div className="font-bold text-lg">Award Winning</div>
-                      <div className="text-sm text-gray-600">Design Excellence</div>
-                    </div>
-                  </div>
-                </div>
+      {/* Image Section - Visible on Mobile now */}
+      <div className="animate-fade-in mt-12 lg:mt-0 relative px-4 lg:px-0">
+        <div className="relative">
+          <img 
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" 
+            alt="Mobile App Development"
+            className="rounded-2xl shadow-2xl w-full object-cover"
+          />
+          
+          {/* Floating Card: Centered ("In Between") and on Bottom Line */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] sm:w-auto lg:left-[-1.5rem] lg:translate-x-0 bg-white text-gray-900 p-4 rounded-xl shadow-2xl border border-gray-100">
+            <div className="flex items-center justify-center gap-3">
+              <Award className="text-purple-600 flex-shrink-0" size={28} />
+              <div className="text-left">
+                <div className="font-bold text-base leading-tight">Award Winning</div>
+                <div className="text-xs text-gray-600">Design Excellence</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Stats Section */}
       <section className="py-16 bg-white">

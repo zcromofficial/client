@@ -149,65 +149,93 @@ const SEOMarketing = () => {
   return (
     <div className="min-h-screen pt-24">
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <Sparkles className="w-4 h-4" />
-                  SEO Excellence
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Dominate Search <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Rankings</span>
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Our proven SEO strategies help businesses rank on the first page of Google. We optimize every aspect of your online presence—from technical SEO to content strategy and link building.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">Comprehensive keyword research and targeting</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">Technical SEO audits and optimization</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">High-quality backlink building campaigns</span>
-                  </li>
-                </ul>
-                 <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                  <Button 
-                    onClick={() => navigate('/contact')}
-                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
-                  >
-                Book Free Session
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-              </Button>
-              <Button
-                onClick={() => window.open(whatsappUrl, "_blank")}
-                variant="outline"
-                className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Chat on WhatsApp
-              </Button>
+      {/* Hero Section */}
+       <section className="py-12 lg:py-20 bg-white overflow-hidden">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Text Content Side */}
+        <div className="text-center lg:text-left">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <Sparkles className="w-4 h-4" />
+            SEO Excellence
           </div>
-              </div>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-blue-600 opacity-20 blur-3xl rounded-full"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" 
-                  alt="SEO Analytics Dashboard" 
-                  className="relative rounded-2xl shadow-2xl w-full object-cover"
-                />
-              </div>
-            </div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Dominate Search{" "}
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              Rankings
+            </span>
+          </h2>
+
+          <p className="text-base md:text-lg text-gray-600 mb-8">
+            Our proven SEO strategies help businesses rank on the first page of
+            Google. We optimize every aspect of your online presence—from
+            technical SEO to content strategy and link building.
+          </p>
+
+          {/* List Items - Centered block on mobile, Left text inside */}
+          <ul className="space-y-4 mb-8 text-left max-w-md mx-auto lg:mx-0">
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                Comprehensive keyword research and targeting
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                Technical SEO audits and optimization
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-600">
+                High-quality backlink building campaigns
+              </span>
+            </li>
+          </ul>
+
+          {/* Buttons - Vertical on Mobile, Horizontal on Desktop */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <Button
+              onClick={() => navigate("/contact")}
+              className="w-full sm:w-auto gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group py-3"
+            >
+              Book Free Session
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+            </Button>
+            <Button
+              onClick={() => window.open(whatsappUrl, "_blank")}
+              variant="outline"
+              className="w-full sm:w-auto font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group py-3"
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Chat on WhatsApp
+            </Button>
           </div>
         </div>
-      </section>
+
+        {/* Image Side */}
+        <div className="relative mt-8 lg:mt-0 px-4 lg:px-0">
+          {/* Blur Effect - now contained safely */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-blue-600 opacity-20 blur-3xl rounded-full transform scale-90"></div>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+            alt="SEO Analytics Dashboard"
+            className="relative rounded-2xl shadow-2xl w-full object-cover"
+          />
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Services Grid */}
       <section className="py-20 bg-gray-50">

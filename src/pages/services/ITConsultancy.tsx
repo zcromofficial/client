@@ -244,68 +244,87 @@ const ITConsultancy = () => {
     <div className="min-h-screen pt-24">
 
       {/* Overview */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                Strategic IT Guidance for <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Business Growth</span>
-              </h2>
-   
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                With 5+ years of experience across industries, we've helped 500+ organizations transform their IT operations, reduce costs by 30-50%, and achieve their digital transformation goals.
-              </p>
-              <div className="space-y-3">
-                {[
-                  "Vendor-neutral advice aligned with your goals",
-                  "Proven frameworks and methodologies",
-                  "Industry-specific expertise and insights",
-                  "C-level advisory and board presentations",
-                  "Hands-on implementation support",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-               <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                  <Button 
-                    onClick={() => navigate('/contact')}
-                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
-                  >
-                Book Free Session
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-              </Button>
-              <Button
-                onClick={() => window.open(whatsappUrl, "_blank")}
-                variant="outline"
-                className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Chat on WhatsApp
-              </Button>
-          </div>
+       <section className="py-12 lg:py-16 bg-white overflow-hidden">
+  <div className="container mx-auto px-4">
+    <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      
+      {/* Left Content Section */}
+      <div className="text-center lg:text-left">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          Strategic IT Guidance for{" "}
+          <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            Business Growth
+          </span>
+        </h2>
+
+        <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+          With 5+ years of experience across industries, we've helped 500+
+          organizations transform their IT operations, reduce costs by 30-50%,
+          and achieve their digital transformation goals.
+        </p>
+
+        {/* Checklist */}
+        <div className="space-y-3 mb-8 text-left mx-auto max-w-md lg:mx-0">
+          {[
+            "Vendor-neutral advice aligned with your goals",
+            "Proven frameworks and methodologies",
+            "Industry-specific expertise and insights",
+            "C-level advisory and board presentations",
+            "Hands-on implementation support",
+          ].map((item, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+              <span className="text-gray-700 text-sm md:text-base">{item}</span>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
-                alt="IT consulting team"
-                className="rounded-2xl shadow-2xl w-full"
-              />
-              <div className="absolute -bottom-4 -left-4 bg-white p-6 rounded-xl shadow-xl">
-                <div className="flex items-center gap-3">
-                  <Award className="w-8 h-8 text-emerald-600" />
-                  <div>
-                    <div className="text-2xl font-bold">5+ Years</div>
-                    <div className="text-sm text-gray-600">Industry Experience</div>
-                  </div>
-                </div>
+          ))}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+          <Button
+            onClick={() => navigate("/contact")}
+            className="w-full sm:w-auto gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group py-3"
+          >
+            Book Free Session
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+          </Button>
+          <Button
+            onClick={() => window.open(whatsappUrl, "_blank")}
+            variant="outline"
+            className="w-full sm:w-auto font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group py-3"
+          >
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Chat on WhatsApp
+          </Button>
+        </div>
+      </div>
+
+      {/* Right Image Section */}
+      <div className="relative mt-8 lg:mt-0 px-4 lg:px-0">
+        <img
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
+          alt="IT consulting team"
+          className="rounded-2xl shadow-2xl w-full object-cover"
+        />
+        
+        {/* Floating Card - Fixed for Mobile */}
+        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] lg:w-auto lg:left-[-2rem] lg:translate-x-0 bg-white p-4 lg:p-6 rounded-xl shadow-xl border border-gray-100">
+          <div className="flex items-center gap-3 justify-center lg:justify-start">
+            <Award className="w-8 h-8 text-emerald-600 flex-shrink-0" />
+            <div>
+              <div className="text-xl lg:text-2xl font-bold">5+ Years</div>
+              <div className="text-xs lg:text-sm text-gray-600">
+                Industry Experience
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Services */}
       <section className="py-16 bg-gray-50">

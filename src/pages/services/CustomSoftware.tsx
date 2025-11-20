@@ -140,68 +140,88 @@ const CustomSoftware = () => {
     <div className="min-h-screen pt-24">
 
       {/* Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+       <section className="py-12 lg:py-20 bg-white overflow-hidden">
+       <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      
+      {/* Text Content - Centered on Mobile */}
+      <div className="text-center lg:text-left">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          Why Custom Software for{" "}
+          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Your Business?
+          </span>
+        </h2>
 
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                Why Custom Software for <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Your Business?</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                With 5+ years of experience, we've delivered mission-critical software for enterprises across healthcare, finance, manufacturing, and more. Our solutions reduce costs, improve efficiency, and scale with your growth.
-              </p>
-              <div className="space-y-3">
-                {[
-                  "100% tailored to your business needs",
-                  "Full source code ownership",
-                  "Seamless integration with existing systems",
-                  "Scalable architecture for future growth",
-                  "Comprehensive documentation & training",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center gap-4 mt-6 justify-center md:justify-start">
-                <Button 
-                    onClick={() => navigate('/contact')}
-                    className="gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group"
-                  >
-                  Book Free Session
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-                </Button>
-                <Button
-                  onClick={() => window.open(whatsappUrl, "_blank")}
-                  variant="outline"
-                  className="font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat on WhatsApp
-                </Button>
-              </div>
+        <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+          With 5+ years of experience, we've delivered mission-critical software
+          for enterprises across healthcare, finance, manufacturing, and more.
+          Our solutions reduce costs, improve efficiency, and scale with your
+          growth.
+        </p>
+
+        {/* Checklist - Centered Block, Left Aligned Text */}
+        <div className="space-y-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
+          {[
+            "100% tailored to your business needs",
+            "Full source code ownership",
+            "Seamless integration with existing systems",
+            "Scalable architecture for future growth",
+            "Comprehensive documentation & training",
+          ].map((item, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700 text-sm md:text-base">{item}</span>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
-                alt="Software development team"
-                className="rounded-2xl shadow-2xl w-full"
-              />
-              <div className="absolute -bottom-4 -left-4 bg-white p-6 rounded-xl shadow-xl">
-                <div className="flex items-center gap-3">
-                  <Award className="w-8 h-8 text-indigo-600" />
-                  <div>
-                    <div className="text-2xl font-bold">ISO Certified</div>
-                    <div className="text-sm text-gray-600">Quality Assured</div>
-                  </div>
-                </div>
+          ))}
+        </div>
+
+        {/* Buttons - Vertical Stack on Mobile */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+          <Button
+            onClick={() => navigate("/contact")}
+            className="w-full sm:w-auto gradient-primary text-white font-semibold shadow-glow hover:shadow-lg transition-smooth group py-3"
+          >
+            Book Free Session
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+          </Button>
+          <Button
+            onClick={() => window.open(whatsappUrl, "_blank")}
+            variant="outline"
+            className="w-full sm:w-auto font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-smooth group py-3"
+          >
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Chat on WhatsApp
+          </Button>
+        </div>
+      </div>
+
+      {/* Image Section */}
+      <div className="relative mt-8 lg:mt-0 px-4 lg:px-0">
+        <img
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+          alt="Software development team"
+          className="rounded-2xl shadow-2xl w-full object-cover"
+        />
+        
+        {/* Floating Card - Fixed for Mobile */}
+        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] lg:w-auto lg:left-[-1rem] lg:translate-x-0 bg-white p-4 lg:p-6 rounded-xl shadow-xl border border-gray-100">
+          <div className="flex items-center gap-3 justify-center lg:justify-start">
+            <Award className="w-8 h-8 text-indigo-600 flex-shrink-0" />
+            <div>
+              <div className="text-xl lg:text-2xl font-bold whitespace-nowrap">ISO Certified</div>
+              <div className="text-xs lg:text-sm text-gray-600">
+                Quality Assured
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Services */}
       <section className="py-16 bg-gray-50">
